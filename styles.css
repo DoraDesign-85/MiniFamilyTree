@@ -32,22 +32,100 @@ h1 {
   color: #4b5563;
 }
 
+.toolbar {
+  margin-bottom: 24px;
+}
+
+.filter-box {
+  max-width: 320px;
+}
+
 .label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
-select {
+select,
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+select,
+input,
+textarea {
   width: 100%;
-  max-width: 320px;
-  padding: 12px 14px;
   border: 1px solid #c4b5fd;
   border-radius: 10px;
   background: #ffffff;
   font-size: 1rem;
   color: #1f2937;
+  padding: 12px 14px;
+}
+
+select {
+  max-width: 320px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.add-member {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 22px;
   margin-bottom: 24px;
+  box-shadow: 0 8px 18px rgba(76, 29, 149, 0.06);
+}
+
+.add-member h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #312e81;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.form-row {
+  margin-top: 18px;
+}
+
+.form-row label,
+.form-grid label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.primary-button {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+}
+
+.summary-bar {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #4c1d95;
 }
 
 .family-tree {
@@ -72,7 +150,7 @@ select {
 
 .family-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
 }
 
@@ -82,6 +160,13 @@ select {
   border-radius: 14px;
   padding: 16px;
   min-height: 180px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .member-badge {
@@ -94,19 +179,33 @@ select {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  margin-bottom: 12px;
+}
+
+.delete-button {
+  border: 1px solid #e9d5ff;
+  background: #fdf2f8;
+  color: #9d174d;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
 }
 
 .family-card h3 {
-  margin: 0 0 8px;
+  margin: 14px 0 8px;
   font-size: 1.2rem;
   color: #1f2937;
 }
 
 .relation {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 600;
   color: #6d28d9;
+}
+
+.birth-year {
+  margin: 0 0 8px;
+  color: #4b5563;
+  font-size: 0.95rem;
 }
 
 .family-card p:last-child {
