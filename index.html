@@ -8,19 +8,70 @@
   </head>
   <body>
     <main class="container">
-      <h1>Az én családfám</h1>
-      <p class="subtitle">Válaszd ki, hogy melyik családtag típust szeretnéd látni.</p>
+      <header class="header">
+        <h1>Az én családfám</h1>
+        <p class="subtitle">Családtagok kezelése, szűrése és megjelenítése.</p>
+      </header>
 
-      <label for="family-role" class="label">Családtag típusa:</label>
-      <select id="family-role" aria-label="Családtag típus kiválasztása">
-        <option value="all">Összes</option>
-        <option value="nagyszülő">Nagyszülő</option>
-        <option value="szülő">Szülő</option>
-        <option value="gyermek">Gyermek</option>
-        <option value="testvér">Testvér</option>
-      </select>
+      <section class="toolbar">
+        <div class="filter-box">
+          <label for="family-role" class="label">Családtag típusa:</label>
+          <select id="family-role" aria-label="Családtag típus kiválasztása">
+            <option value="all">Összes</option>
+            <option value="nagyszülő">Nagyszülő</option>
+            <option value="szülő">Szülő</option>
+            <option value="gyermek">Gyermek</option>
+            <option value="testvér">Testvér</option>
+          </select>
+        </div>
+      </section>
 
-      <section id="family-list" class="family-list" aria-live="polite"></section>
+      <section class="add-member">
+        <h2>Új családtag hozzáadása</h2>
+        <form id="family-form">
+          <div class="form-grid">
+            <div>
+              <label for="member-name">Név</label>
+              <input id="member-name" name="name" type="text" placeholder="Példa: Gábor" required />
+            </div>
+
+            <div>
+              <label for="member-role">Kapcsolat</label>
+              <select id="member-role" name="role">
+                <option value="nagyszülő">Nagyszülő</option>
+                <option value="szülő">Szülő</option>
+                <option value="gyermek">Gyermek</option>
+                <option value="testvér">Testvér</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="member-relation">Kapcsolat megnevezése</label>
+              <input id="member-relation" name="relation" type="text" placeholder="Példa: Apa apja" />
+            </div>
+
+            <div>
+              <label for="member-birth-year">Születési év</label>
+              <input id="member-birth-year" name="birthYear" type="number" min="1900" max="2100" placeholder="1995" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="member-description">Leírás</label>
+            <textarea id="member-description" name="description" rows="3" placeholder="Rövid leírás a családtagról..."></textarea>
+          </div>
+
+          <button type="submit" class="primary-button">Hozzáadás</button>
+        </form>
+      </section>
+
+      <section>
+        <div class="summary-bar">
+          <span id="member-count">0 tag</span>
+        </div>
+      </section>
+
+      <section id="family-tree" class="family-tree" aria-live="polite"></section>
     </main>
 
     <script src="script.js"></script>
